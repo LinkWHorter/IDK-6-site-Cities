@@ -1,0 +1,91 @@
+table {
+  /*table-layout: auto;
+  height: 100%;
+  width: 100%;
+  border: 1;
+  border-collapse: collapse;*/
+}
+
+@mixin bc($s) {
+  background-color: $s;
+}
+
+@mixin hw($h,$w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin fd($f) {
+  flex-direction: $f;
+}
+
+%padd {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+%appd {
+  display: flex;
+  @include bc(gray);
+  justify-content: center;
+}
+
+#Hed {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.texted {
+    text-align: center;
+    color: white;
+}
+
+
+p {
+  .base1 &{
+      @extend %padd;
+  }
+  .base2 &{
+      @extend %padd;
+  }
+}
+
+.menu, .foots {
+    @extend %appd;
+}
+
+.base {
+    display: flex;
+    @include fd(row);
+
+    .base1 {
+        @include bc(silver);
+    }
+
+    .base2 {
+        @include bc(whitesmoke);
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 568px) {
+    .base {
+        @include fd(column);
+    }
+
+    .base1 {
+        @include hw(15%,100%);
+    }
+}
+
+@media screen and (min-width: 569px) and (max-width: 1400px) {
+
+    .base {
+        @include fd(row);
+    }
+  
+    .base1 {
+        @include hw(auto,15%);
+    }
+}

@@ -1,0 +1,61 @@
+table {
+  /*table-layout: auto;
+  height: 100%;
+  width: 100%;
+  border: 1;
+  border-collapse: collapse;*/
+}
+
+.base2 p, .base1 p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.menu, .foots {
+  display: flex;
+  background-color: gray;
+  justify-content: center;
+}
+
+#Hed {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.texted {
+  text-align: center;
+  color: white;
+}
+
+.base {
+  display: flex;
+  flex-direction: row;
+}
+.base .base1 {
+  background-color: silver;
+}
+.base .base2 {
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+@media screen and (max-width: 568px) {
+  .base {
+    flex-direction: column;
+  }
+  .base1 {
+    height: 15%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 569px) and (max-width: 1400px) {
+  .base {
+    flex-direction: row;
+  }
+  .base1 {
+    height: auto;
+    width: 15%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
